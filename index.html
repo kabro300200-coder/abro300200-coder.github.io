@@ -3,92 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kamran Abro - Professional Developer & App Creator">
-    <meta name="keywords" content="Developer, Apps, Educational, Legal Applications">
+    <meta name="description" content="Kamran Abro - Professional Developer, Law Graduate, and Founder of Educational Platforms">
+    <meta name="keywords" content="Developer, Law Graduate, Educational Apps, MDCAT, Law GAT, Portfolio">
     <meta name="author" content="Kamran Abro">
-    <title>Kamran Abro - Professional Developer</title>
+    <meta property="og:title" content="Kamran Abro - Professional Developer">
+    <meta property="og:description" content="Building educational platforms and apps for students across Pakistan">
+    <meta property="og:type" content="website">
+    <title>Kamran Abro - Developer & Founder</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">🚀 Kamran Abro</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#apps">Apps</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="#home" class="logo">
+                <span class="logo-icon">🚀</span>
+                <span>Kamran Abro</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Welcome to My Professional Developer Page</h1>
-            <p>High-Quality Educational & Legal Applications for Everyone</p>
-            <a href="#apps" class="cta-button">Explore My Apps</a>
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-subtitle">Welcome to My Portfolio</h2>
+                <h1>Hi, I'm <span class="gradient-text">Kamran Abro</span></h1>
+                <p class="hero-description">
+                    A passionate developer, law graduate, and founder building innovative educational platforms 
+                    and mobile applications to help students succeed across Pakistan.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/kabro300200-coder" class="social-icon" target="_blank">GitHub</a>
+                    <a href="mailto:kabro300200@gmail.com" class="social-icon">Email</a>
+                    <a href="https://wa.me/923357300200" class="social-icon" target="_blank">WhatsApp</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Kamran Abro</h2>
-                <p>I am a dedicated developer committed to creating high-quality, educational, and legal applications. With years of experience in software development, I focus on delivering solutions that meet the highest standards of quality and reliability.</p>
-                <p>My mission is to provide developers and users with tools that are both powerful and easy to use, while maintaining complete transparency and legality in all my projects.</p>
-            </div>
-            <div class="stats">
-                <div class="stat-box">
-                    <h3>5+</h3>
-                    <p>Years Experience</p>
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div>
+                    <h3>Who I Am</h3>
+                    <p>
+                        I'm Kamran Abro, a passionate developer and law graduate from Balochistan, Pakistan. 
+                        With a unique blend of legal expertise and technical skills, I've dedicated myself to 
+                        creating innovative educational platforms and mobile applications.
+                    </p>
+                    <p>
+                        My mission is to democratize education by providing high-quality, accessible learning 
+                        tools for students preparing for competitive and academic examinations across Pakistan.
+                    </p>
+                    <p>
+                        What drives me is the opportunity to bridge the gap between education and technology, 
+                        making quality preparation resources available to everyone, regardless of their background.
+                    </p>
+                    <div class="highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-number">5+</div>
+                            <div class="highlight-label">Years Experience</div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-number">50+</div>
+                            <div class="highlight-label">Projects Completed</div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-number">100%</div>
+                            <div class="highlight-label">Professional</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <h3>50+</h3>
-                    <p>Projects Completed</p>
-                </div>
-                <div class="stat-box">
-                    <h3>100%</h3>
-                    <p>Legal & Professional</p>
+                <div class="about-image">
+                    <div class="image-placeholder">📊</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Applications Section -->
-    <section class="apps" id="apps">
-        <div class="apps-container">
-            <h2 class="section-title">My Applications</h2>
-            <div class="apps-grid">
-                <div class="app-card">
-                    <div class="app-icon">📱</div>
-                    <h3>Mobile Apps</h3>
-                    <p>Professional mobile applications designed for Android and iOS platforms with modern UI/UX design.</p>
-                    <a href="#" class="app-button">Learn More</a>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Law GAT MCQs -->
+                <div class="project-card">
+                    <div class="project-icon">📚</div>
+                    <h3>Law GAT MCQs</h3>
+                    <p>
+                        A comprehensive educational platform designed for law students preparing for the 
+                        Law Graduate Assessment Test (Law-GAT). Provides chapter-wise MCQs and structured 
+                        preparation material.
+                    </p>
+                    <ul class="project-features">
+                        <li>✓ Chapter-wise MCQs</li>
+                        <li>✓ Practice Tests</li>
+                        <li>✓ Fast Performance</li>
+                        <li>✓ Student-Friendly UI</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">Education</span>
+                        <span class="tag">Law</span>
+                        <span class="tag">Platform</span>
+                    </div>
                 </div>
 
-                <div class="app-card">
-                    <div class="app-icon">🌐</div>
-                    <h3>Web Solutions</h3>
-                    <p>Responsive web applications built with latest technologies for optimal performance and user experience.</p>
-                    <a href="#" class="app-button">Learn More</a>
+                <!-- Future Dr. -->
+                <div class="project-card">
+                    <div class="project-icon">🏥</div>
+                    <h3>Future Dr. (MDCAT)</h3>
+                    <p>
+                        A modern educational platform for MDCAT and medical entry test aspirants. Simplifies 
+                        preparation through organized study material, MCQs, and digital learning tools 
+                        specifically designed for medical students.
+                    </p>
+                    <ul class="project-features">
+                        <li>✓ MDCAT Preparation</li>
+                        <li>✓ Organized Chapters</li>
+                        <li>✓ Responsive Design</li>
+                        <li>✓ Regular Updates</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">Medical</span>
+                        <span class="tag">MDCAT</span>
+                        <span class="tag">Education</span>
+                    </div>
                 </div>
 
-                <div class="app-card">
-                    <div class="app-icon">📚</div>
-                    <h3>Educational Tools</h3>
-                    <p>Interactive learning platforms that make education engaging, accessible, and effective for all users.</p>
-                    <a href="#" class="app-button">Learn More</a>
+                <!-- Portfolio Website -->
+                <div class="project-card">
+                    <div class="project-icon">🌐</div>
+                    <h3>Portfolio Website</h3>
+                    <p>
+                        This professional portfolio website showcasing my projects, skills, and expertise. 
+                        Built with modern web technologies, featuring responsive design and smooth animations 
+                        for an optimal user experience.
+                    </p>
+                    <ul class="project-features">
+                        <li>✓ Responsive Design</li>
+                        <li>✓ Modern UI/UX</li>
+                        <li>✓ SEO Optimized</li>
+                        <li>✓ Fast Loading</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">Web</span>
+                        <span class="tag">Portfolio</span>
+                        <span class="tag">GitHub Pages</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>💻 Programming</h4>
+                    <ul>
+                        <li>JavaScript (ES6+)</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>Python</li>
+                        <li>PHP</li>
+                        <li>SQL & Databases</li>
+                    </ul>
                 </div>
 
-                <div class="app-card">
-                    <div class="app-icon">⚙️</div>
-                    <h3>Utility Software</h3>
-                    <p>Powerful utility applications designed to simplify tasks and increase productivity in daily work.</p>
-                    <a href="#" class="app-button">Learn More</a>
+                <div class="skill-category">
+                    <h4>🛠️ Tools & Frameworks</h4>
+                    <ul>
+                        <li>GitHub & Git</li>
+                        <li>VS Code</li>
+                        <li>Responsive Design</li>
+                        <li>Web Development</li>
+                        <li>Mobile Apps</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>🎯 Expertise</h4>
+                    <ul>
+                        <li>Educational Platforms</li>
+                        <li>Web Applications</li>
+                        <li>UI/UX Design</li>
+                        <li>Legal Technology</li>
+                        <li>Project Management</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -96,38 +217,71 @@
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <div class="contact-item">
-                <h3>📧 Email</h3>
-                <a href="mailto:kabro300200@gmail.com">kabro300200@gmail.com</a>
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <p>Call or WhatsApp me anytime</p>
+                    <a href="tel:+923357300200" class="contact-link">+92 335 7300200</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Send me an email directly</p>
+                    <a href="mailto:kabro300200@gmail.com" class="contact-link">kabro300200@gmail.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Based in Pakistan</p>
+                    <a href="#" class="contact-link">Balochistan, Pakistan</a>
+                </div>
             </div>
-            <div class="contact-item">
-                <h3>📱 Phone</h3>
-                <a href="tel:+923134567890">+92 313 456 7890</a>
-            </div>
-            <div class="contact-item">
-                <h3>🌍 Location</h3>
-                <p>Pakistan</p>
+
+            <div class="contact-cta">
+                <p>Interested in collaborating or have any questions? Let's connect!</p>
+                <a href="mailto:kabro300200@gmail.com" class="btn btn-primary">Send Me an Email</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Apps</a>
-                <a href="#">Contact</a>
-                <a href="https://github.com/kabro300200-coder" target="_blank">GitHub</a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🚀 Kamran Abro</h4>
+                    <p>Building innovative educational platforms and mobile applications.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://github.com/kabro300200-coder" target="_blank">GitHub</a></li>
+                        <li><a href="mailto:kabro300200@gmail.com">Email</a></li>
+                        <li><a href="https://wa.me/923357300200" target="_blank">WhatsApp</a></li>
+                    </ul>
+                </div>
             </div>
-            <p>&copy; 2026 Kamran Abro. All rights reserved. | Legal & Professional Applications Only</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kamran Abro. All rights reserved. | Building the Future of Education</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Google Ads -->
+    <!-- Google Analytics (Optional) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6210409733508031"
         crossorigin="anonymous"></script>
 
