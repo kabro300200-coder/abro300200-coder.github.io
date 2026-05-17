@@ -1,4 +1,15 @@
-// Smooth scrolling for navigation links
+// Mobile Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+}
+
+// Smooth Scroll Navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -8,11 +19,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
+            if (navMenu) navMenu.classList.remove('active');
         }
     });
 });
 
-// Active navigation highlight
+// Active Navigation Link
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section');
@@ -25,15 +37,15 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.style.color = '';
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
         if (link.getAttribute('href').slice(1) === current) {
-            link.style.color = '#6366f1';
+            link.classList.add('active');
         }
     });
 });
 
-// Scroll animation for elements
+// Scroll Animation for Cards
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -42,16 +54,22 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = 'slideIn 0.6s ease forwards';
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
 // Observe all cards
-document.querySelectorAll('.app-card, .stat-box, .contact-item').forEach(el => {
+document.querySelectorAll('.project-card, .contact-card, .highlight-item, .skill-category').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease';
     observer.observe(el);
 });
 
-// Mobile menu toggle (if needed in future)
-console.log('Website loaded successfully!');
+// Console message
+console.log('🚀 Kamran Abro - Professional Portfolio Loaded Successfully!');
+console.log('📧 Email: kabro300200@gmail.com');
+console.log('📱 Phone: +92 335 7300200');
