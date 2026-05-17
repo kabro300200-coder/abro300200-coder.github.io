@@ -34,7 +34,95 @@ body {
     padding: 0 2rem;
 }
 
-/* Navbar */
+/* ============ ANIMATIONS KEYFRAMES ============ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 30px); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes rotateIcon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ============ NAVBAR STYLES ============ */
 .navbar {
     position: fixed;
     top: 0;
@@ -44,6 +132,7 @@ body {
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.6s ease-out;
 }
 
 .nav-container {
@@ -63,10 +152,17 @@ body {
     font-weight: bold;
     color: var(--primary-color);
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
 }
 
 .logo-icon {
     font-size: 1.8rem;
+    animation: rotateIcon 8s infinite linear;
 }
 
 .nav-menu {
@@ -114,7 +210,7 @@ body {
     border-radius: 2px;
 }
 
-/* Hero Section */
+/* ============ HERO SECTION ============ */
 .hero {
     margin-top: 80px;
     min-height: calc(100vh - 80px);
@@ -135,13 +231,8 @@ body {
     width: 600px;
     height: 600px;
     background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-    animation: float 15s infinite;
+    animation: float 15s infinite ease-in-out;
     border-radius: 50%;
-}
-
-@keyframes float {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(30px, 30px); }
 }
 
 .hero-content {
@@ -149,6 +240,7 @@ body {
     z-index: 2;
     max-width: 800px;
     text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .hero h1 {
@@ -156,13 +248,16 @@ body {
     margin-bottom: 1rem;
     font-weight: 800;
     line-height: 1.2;
+    animation: slideInLeft 0.8s ease-out 0.3s both;
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradientShift 3s ease infinite;
 }
 
 .hero-subtitle {
@@ -170,6 +265,7 @@ body {
     color: var(--secondary-color);
     margin-bottom: 0.5rem;
     font-weight: 600;
+    animation: slideInRight 0.8s ease-out 0.2s both;
 }
 
 .hero-description {
@@ -177,6 +273,7 @@ body {
     color: var(--muted-text);
     margin-bottom: 2rem;
     line-height: 1.8;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .hero-buttons {
@@ -185,17 +282,37 @@ body {
     justify-content: center;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
 }
 
+/* ============ BUTTON STYLES ============ */
 .btn {
     padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     cursor: pointer;
     border: none;
     font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn-primary {
@@ -218,12 +335,14 @@ body {
 .btn-secondary:hover {
     background: var(--primary-color);
     color: white;
+    transform: translateY(-3px);
 }
 
 .social-links {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
 .social-icon {
@@ -234,16 +353,18 @@ body {
     text-decoration: none;
     border-radius: 25px;
     border: 1px solid var(--border-color);
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 .social-icon:hover {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
 }
 
-/* Section Styling */
+/* ============ SECTION STYLING ============ */
 section {
     padding: 5rem 0;
     position: relative;
@@ -254,6 +375,7 @@ section {
     text-align: center;
     margin-bottom: 3rem;
     font-weight: 800;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .section-title::after {
@@ -264,9 +386,10 @@ section {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     margin: 1rem auto;
     border-radius: 2px;
+    animation: slideInLeft 0.6s ease-out 0.2s both;
 }
 
-/* About Section */
+/* ============ ABOUT SECTION ============ */
 .about {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
 }
@@ -276,6 +399,14 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+}
+
+.about-content > div:first-child {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.about-content > div:last-child {
+    animation: slideInRight 0.8s ease-out;
 }
 
 .about-text h3 {
@@ -306,12 +437,21 @@ section {
     background: var(--card-bg);
     border-radius: 15px;
     border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    animation: scaleIn 0.6s ease-out;
+}
+
+.highlight-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 15px 40px rgba(236, 72, 153, 0.2);
 }
 
 .highlight-number {
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--secondary-color);
+    animation: pulse 2s ease-in-out infinite;
 }
 
 .highlight-label {
@@ -336,9 +476,16 @@ section {
     justify-content: center;
     font-size: 6rem;
     box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+    animation: float 5s ease-in-out infinite;
+    transition: all 0.3s ease;
 }
 
-/* Projects Section */
+.image-placeholder:hover {
+    box-shadow: 0 30px 60px rgba(99, 102, 241, 0.4);
+    animation: bounce 0.6s ease-in-out;
+}
+
+/* ============ PROJECTS SECTION ============ */
 .projects {
     background: var(--darker-bg);
 }
@@ -354,9 +501,28 @@ section {
     padding: 2rem;
     border-radius: 20px;
     border: 1px solid var(--border-color);
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    animation: fadeInUp 0.6s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: all 0.5s ease;
+}
+
+.project-card:hover::before {
+    top: -50%;
+    left: -50%;
 }
 
 .project-card:hover {
@@ -368,6 +534,7 @@ section {
 .project-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    animation: bounce 2s ease-in-out infinite;
 }
 
 .project-card h3 {
@@ -391,6 +558,11 @@ section {
     color: var(--muted-text);
     margin-bottom: 0.5rem;
     padding-left: 0;
+    transition: color 0.3s ease;
+}
+
+.project-features li:hover {
+    color: var(--secondary-color);
 }
 
 .project-tags {
@@ -407,9 +579,15 @@ section {
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-/* Skills Section */
+.tag:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* ============ SKILLS SECTION ============ */
 .skills {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
 }
@@ -425,18 +603,21 @@ section {
     padding: 2rem;
     border-radius: 15px;
     border: 1px solid var(--border-color);
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    animation: scaleIn 0.6s ease-out;
 }
 
 .skill-category:hover {
     transform: translateY(-5px);
     border-color: var(--secondary-color);
+    box-shadow: 0 15px 40px rgba(236, 72, 153, 0.1);
 }
 
 .skill-category h4 {
     font-size: 1.3rem;
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
+    animation: slideInLeft 0.6s ease-out;
 }
 
 .skill-category ul {
@@ -448,6 +629,7 @@ section {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    transition: all 0.3s ease;
 }
 
 .skill-category li::before {
@@ -456,9 +638,20 @@ section {
     left: 0;
     color: var(--primary-color);
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-/* Contact Section */
+.skill-category li:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.skill-category li:hover::before {
+    color: var(--secondary-color);
+    transform: scale(1.5);
+}
+
+/* ============ CONTACT SECTION ============ */
 .contact {
     background: var(--darker-bg);
 }
@@ -476,7 +669,8 @@ section {
     border-radius: 15px;
     border: 1px solid var(--border-color);
     text-align: center;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .contact-card:hover {
@@ -488,6 +682,12 @@ section {
 .contact-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    animation: bounce 1s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    animation: rotateIcon 0.6s ease-out;
 }
 
 .contact-card h3 {
@@ -499,11 +699,12 @@ section {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
 }
 
 .contact-link:hover {
     color: var(--accent-color);
+    text-decoration: underline;
 }
 
 .contact-card p {
@@ -518,6 +719,7 @@ section {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
     border-radius: 20px;
     border: 1px solid var(--border-color);
+    animation: scaleIn 0.6s ease-out;
 }
 
 .contact-cta p {
@@ -526,7 +728,7 @@ section {
     color: var(--light-text);
 }
 
-/* Footer */
+/* ============ FOOTER ============ */
 .footer {
     background: rgba(15, 23, 42, 0.8);
     border-top: 1px solid var(--border-color);
@@ -558,7 +760,7 @@ section {
 .footer-section a {
     color: var(--muted-text);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
@@ -572,7 +774,7 @@ section {
     color: var(--muted-text);
 }
 
-/* Responsive */
+/* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -593,6 +795,7 @@ section {
 
     .nav-menu.active {
         left: 0;
+        animation: slideInLeft 0.3s ease-out;
     }
 
     .hero-buttons {
